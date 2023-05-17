@@ -1,11 +1,17 @@
-import { Title, MessageContainer, LinkStyled } from './NotFound.styled';
+import BackLink from 'components/BackLink/BackLink';
+import NotFoundImg from '../../images/not-found.png';
+import { NotFoundBox } from './NotFound.styled';
 
-export default function NotFound() {
+const NotFound = () => {
   return (
-    <MessageContainer>
-      <Title>
-        Not found this page! Turn to <LinkStyled to="/">Home</LinkStyled>
-      </Title>
-    </MessageContainer>
+    <>
+      <BackLink />
+      <NotFoundBox>
+        <h1> Ops, page not found :( </h1>
+        <img src={NotFoundImg} alt="" width="500" />
+      </NotFoundBox>
+    </>
   );
-}
+};
+
+export default NotFound;

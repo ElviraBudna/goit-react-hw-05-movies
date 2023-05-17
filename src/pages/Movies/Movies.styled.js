@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 
-export const NotFoundBox = styled.div`
+export const MovieMain = styled.main`
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 50px;
+  gap: 20px;
+  
+}
 `;

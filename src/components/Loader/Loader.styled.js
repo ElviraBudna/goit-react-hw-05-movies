@@ -1,5 +1,6 @@
-// import styled from '@emotion/styled';
+import styled from '@emotion/styled';
 
-// export const LoaderContainer = styled.div`
-//   margin: 0 auto;
-// `;
+export const LoaderBox = styled.div`
+  display: flex;
+  justify-content: center;
+`;

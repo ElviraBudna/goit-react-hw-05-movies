@@ -1,15 +1,12 @@
-// import axios from 'axios';
 import Notiflix from 'notiflix';
-import { fetchReviews, normalizedReviews } from 'api/API';
+import { fetchReviews, normalizedReviews } from 'api/moviesAPI';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { List, Text, Title } from './Reviews.styled';
+import { ReviewsList, ErrorMessege } from './Reviews.styled';
 
-// const BASE_URL = 'https://api.themoviedb.org/3/movie/';
-// const MY_KEY = 'ebd45623275d587b48fa6048f565532d';
-
-export default function Reviews() {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+  const [expandedIndex, setExpandedIndex] = useState(null);
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -27,37 +24,34 @@ export default function Reviews() {
     };
 
     getReviews();
-    // async function fetchMoviesCast() {
-    //   try {
-    //     const response = await axios.get(
-    //       `${BASE_URL}/${movieId}/reviews?api_key=${MY_KEY}&language=en-US`
-    //     );
-    //     const data = response.data.results;
-    //     const reviewsObj = data.map(({ id, author, content }) => ({
-    //       id,
-    //       author,
-    //       content,
-    //     }));
-    //     return reviewsObj;
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // }
-    // fetchMoviesCast().then(review => setReviews(review));
   }, [movieId]);
 
+  const toggleExpand = index => {
+    setExpandedIndex(index === expandedIndex ? null : index);
+  };
+
   return (
-    <List>
+    <ReviewsList>
       {!reviews.length ? (
-        <Text>We do not have any reviews for this movie. </Text>
+        <ErrorMessege>There are no reviews yet</ErrorMessege>
       ) : (
-        reviews.map(({ id, author, content }) => (
-          <li key={id}>
-            <Title>Author: {author}</Title>
-            <Text>{content}</Text>
-          </li>
-        ))
+        reviews.map(({ id, userName, author, content, avatar }, index) => {
+          const truncatedContent =
+            content.length > 150 ? content.slice(0, 150) + '...' : content;
+          return (
+            <li key={id}>
+              <div>
+                <img src={avatar} alt={author} width="50" height="50" />
+                <h2>{userName}</h2>
+              </div>
+              <p onClick={() => toggleExpand(index)}>
+                {index === expandedIndex ? content : truncatedContent}
+              </p>
+            </li>
+          );
+        })
       )}
-    </List>
+    </ReviewsList>
   );
-}
+};
+export default Reviews;
