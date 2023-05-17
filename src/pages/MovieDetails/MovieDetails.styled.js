@@ -6,10 +6,9 @@ export const CastList = styled.ul`
   gap: 20px;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 50px;
+  padding: 14px 0;
 `;
 export const AdditionalInfoLink = styled(Link)`
-  padding: 14px 32px;
   border-radius: 4px;
 
   color: inherit;

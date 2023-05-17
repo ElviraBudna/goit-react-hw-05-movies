@@ -3,6 +3,8 @@ import {
   LinkStyled,
   TitleMovie,
   ListOfMovies,
+  Item,
+  Img,
 } from 'components/MoviesList/MoviesList.styled';
 import { useLocation } from 'react-router-dom';
 
@@ -11,12 +13,12 @@ const MoviesList = ({ movies }) => {
   return (
     <ListOfMovies>
       {movies.map(movie => (
-        <li key={movie.id}>
+        <Item key={movie.id}>
           <LinkStyled to={`/movies/${movie.id}`} state={{ from: location }}>
-            <img src={movie.poster} alt={movie.title} />
+            <Img src={movie.poster} alt={movie.title} />
             <TitleMovie>{movie.title}</TitleMovie>
           </LinkStyled>
-        </li>
+        </Item>
       ))}
     </ListOfMovies>
   );

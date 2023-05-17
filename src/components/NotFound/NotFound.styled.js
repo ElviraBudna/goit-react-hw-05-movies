@@ -10,15 +10,6 @@ export const NotFoundBox = styled.div`
   margin-top: 50px;
 `;
 
-// export const LinkStyled = styled(Link)`
-//   text-decoration: none;
-//   font-style: normal;
-
-//   font-size: 30px;
-
-//   color: blue;
-// `;
-
 export const Title = styled.h2`
   font-size: 30px;
   font-weight: 400;

@@ -35,13 +35,13 @@ const Reviews = () => {
       {!reviews.length ? (
         <ErrorMessege>We do not have any reviews for this movie.</ErrorMessege>
       ) : (
-        reviews.map(({ id, userName, author, content, avatar }, index) => {
+        reviews.map(({ id, author, content, avatar }, index) => {
           const truncatedContent =
             content.length > 150 ? content.slice(0, 150) + '...' : content;
           return (
             <li key={id}>
               <div>
-                <Title>{userName}</Title>
+                <Title>Author: {author}</Title>
               </div>
               <Text onClick={() => toggleExpand(index)}>
                 {index === expandedIndex ? content : truncatedContent}

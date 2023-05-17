@@ -1,12 +1,6 @@
 import styled from '@emotion/styled';
 
 export const CastList = styled.ul`
-  ${
-    '' /* display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px; */
-  }
   display: grid;
   max-width: calc(100vw - 48px);
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -17,15 +11,6 @@ export const CastList = styled.ul`
   list-style: none;
   margin-left: auto;
   margin-right: auto;
-  ${
-    '' /* > li {
-    display: flex;
-    flex-direction: column;
-    flex-basis: calc((100% - 8 * 10px) / 9);
-    border-radius: 5px;
-    overflow: hidden;
-  } */
-  }
 `;
 
 export const CastInfoBox = styled.div`
@@ -36,22 +21,7 @@ export const CastInfoBox = styled.div`
   flex-grow: 1;
 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px -1px;
-  background-color: rgba(218, 165, 32);
-  color: #000;
   text-align: center;
-  ${
-    '' /* > h3 {
-    font-size: 14px;
-  } */
-  }
-  ${
-    '' /* > p {
-    text-decoration-line: overline;
-    font-style: italic;
-    font-size: 12px;
-    opacity: 0.7;
-  } */
-  }
 `;
 
 export const Item = styled.li`

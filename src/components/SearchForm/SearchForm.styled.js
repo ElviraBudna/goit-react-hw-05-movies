@@ -9,21 +9,6 @@ export const SerchForm = styled.form`
   border-radius: 3px;
   overflow: hidden;
   margin: 0 auto;
-  ${'' /* padding-bottom: 20px; */}
-  ${
-    '' /* width: 250px;
-  margin-top: 20px;
-  position: relative;
-  border-radius: 100px;
-  padding: 10px 15px;
-
-  background: #ffffff;
-
-  > input {
-    border: none;
-    outline: none;
-  } */
-  }
 `;
 export const SerchButton = styled.button`
   display: inline-block;
@@ -41,17 +26,6 @@ export const SerchButton = styled.button`
 
   &:hover {
     opacity: 1;
-  }
-  ${
-    '' /* border: none;
-  position: absolute;
-  right: 4px;
-  cursor: pointer;
-  background-color: transparent;
-  opacity: 0.5;
-  &:hover {
-    opacity: 1;
-  } */
   }
 `;
 

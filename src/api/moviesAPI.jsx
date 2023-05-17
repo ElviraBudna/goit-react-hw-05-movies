@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
+import defaultImage from 'images/photo.jpg';
 
 export const API_KEY = 'bb95fe38b7df9f87f0ecf707b6f0bb8b';
 
@@ -26,14 +27,12 @@ export const fetchQueryMovies = async querySearch => {
 };
 
 export const normalizeMoviesList = arr => {
-  return arr.map(({ id, title, release_date, vote_average, poster_path }) => ({
+  return arr.map(({ id, title, poster_path }) => ({
     id,
     title,
-    release_date,
-    rating: vote_average.toFixed(1),
     poster: poster_path
       ? `https://image.tmdb.org/t/p/w500${poster_path}`
-      : `https://thumbs.dreamstime.com/b/%D0%B8-%D1%8E%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BF-%D0%B0%D0%BA%D0%B0%D1%82%D0%B0-%D0%BA%D0%B8%D0%BD%D0%BE-48746594.jpg`,
+      : defaultImage,
   }));
 };
 
@@ -66,7 +65,7 @@ export const normalizedCast = arr => {
     name,
     photo: profile_path
       ? `https://image.tmdb.org/t/p/w500${profile_path}`
-      : `https://you-anime.ru/anime-images/characters/WNbWU2vEyeW5hAyO.jpg`,
+      : defaultImage,
   }));
 };
 
@@ -86,12 +85,6 @@ export const normalizedReviews = arr => {
     id,
     author,
     content,
-    userName: author_details.username,
-    avatar:
-      author_details.avatar_path &&
-      author_details.avatar_path.startsWith('/http')
-        ? author_details.avatar_path.slice(1, author_details.avatar_path.length)
-        : `https://image.tmdb.org/t/p/w500${author_details.avatar_path}`,
   }));
 };
 

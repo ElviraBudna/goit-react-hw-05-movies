@@ -44,3 +44,15 @@ export const TitleMovie = styled.h2`
   font-size: 19px;
   text-align: center;
 `;
+export const Img = styled.img`
+  max-width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 16px;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+`;
