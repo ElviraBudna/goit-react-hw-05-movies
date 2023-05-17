@@ -19,7 +19,7 @@ export const BackLinkBtn = styled(Link)`
   &:hover {
     color: #ffd700;
   }
-  > svg {
+  svg {
     fill: currentColor;
   }
 `;

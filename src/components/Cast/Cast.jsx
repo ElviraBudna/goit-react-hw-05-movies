@@ -2,7 +2,14 @@ import Notiflix from 'notiflix';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCastInfo, normalizedCast } from 'api/moviesAPI';
-import { CastList, CastInfoBox } from './Cast.styled';
+import {
+  CastList,
+  Item,
+  CastImg,
+  CastInfoBox,
+  Title,
+  Text,
+} from './Cast.styled';
 import { ErrorMessege } from 'components/Reviews/Reviews.styled';
 
 const Cast = () => {
@@ -33,13 +40,13 @@ const Cast = () => {
       ) : (
         castList.map(({ id, character, name, photo }) => {
           return (
-            <li key={id}>
-              <img src={photo} alt={name} />
+            <Item key={id}>
+              <CastImg src={photo} alt={name} />
               <CastInfoBox>
-                <h3>{name}</h3>
-                <p>{character}</p>
+                <Title>{name}</Title>
+                <Text>{character}</Text>
               </CastInfoBox>
-            </li>
+            </Item>
           );
         })
       )}
