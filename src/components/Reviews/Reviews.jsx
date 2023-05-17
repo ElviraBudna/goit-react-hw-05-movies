@@ -2,7 +2,7 @@ import Notiflix from 'notiflix';
 import { fetchReviews, normalizedReviews } from 'api/moviesAPI';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ReviewsList, ErrorMessege } from './Reviews.styled';
+import { ReviewsList, ErrorMessege, Text, Title } from './Reviews.styled';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -33,7 +33,7 @@ const Reviews = () => {
   return (
     <ReviewsList>
       {!reviews.length ? (
-        <ErrorMessege>There are no reviews yet</ErrorMessege>
+        <ErrorMessege>We do not have any reviews for this movie.</ErrorMessege>
       ) : (
         reviews.map(({ id, userName, author, content, avatar }, index) => {
           const truncatedContent =
@@ -41,12 +41,11 @@ const Reviews = () => {
           return (
             <li key={id}>
               <div>
-                <img src={avatar} alt={author} width="50" height="50" />
-                <h2>{userName}</h2>
+                <Title>{userName}</Title>
               </div>
-              <p onClick={() => toggleExpand(index)}>
+              <Text onClick={() => toggleExpand(index)}>
                 {index === expandedIndex ? content : truncatedContent}
-              </p>
+              </Text>
             </li>
           );
         })

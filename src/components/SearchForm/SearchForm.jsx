@@ -1,20 +1,19 @@
 import PropTypes from 'prop-types';
-import { SerchForm, SerchButton } from './SearchForm.styled';
-import { ReactComponent as SerchIcon } from './../../images/search.svg';
+import { SerchForm, SerchButton, Input } from './SearchForm.styled';
 
 const SearchFormForMovies = ({ value, onChange, onSubmit }) => {
   return (
     <SerchForm onSubmit={onSubmit}>
-      <input
+      <Input
         name="search"
         type="text"
-        placeholder="Movies search..."
+        placeholder="Enter query"
+        autoComplete="off"
+        autoFocus
         value={value}
         onChange={onChange}
       />
-      <SerchButton type="submit">
-        <SerchIcon width="20px" height="20px" />
-      </SerchButton>
+      <SerchButton type="submit">Search</SerchButton>
     </SerchForm>
   );
 };

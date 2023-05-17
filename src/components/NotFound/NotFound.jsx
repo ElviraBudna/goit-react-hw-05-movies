@@ -1,14 +1,14 @@
-import BackLink from 'components/BackLink/BackLink';
-import NotFoundImg from '../../images/not-found.png';
-import { NotFoundBox } from './NotFound.styled';
+// import BackLink from 'components/BackLink/BackLink';
+import { NotFoundBox, LinkStyled, Title } from './NotFound.styled';
 
 const NotFound = () => {
   return (
     <>
-      <BackLink />
+      {/* <BackLink /> */}
       <NotFoundBox>
-        <h1> Ops, page not found :( </h1>
-        <img src={NotFoundImg} alt="" width="500" />
+        <Title>
+          Not found this page! Turn to <LinkStyled to="/">Home</LinkStyled>
+        </Title>
       </NotFoundBox>
     </>
   );

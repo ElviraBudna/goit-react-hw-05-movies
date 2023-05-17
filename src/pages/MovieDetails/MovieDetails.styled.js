@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const CastList = styled.ul`
   display: flex;
@@ -8,11 +8,11 @@ export const CastList = styled.ul`
   justify-content: space-around;
   margin-bottom: 50px;
 `;
-export const AdditionalInfoLink = styled(NavLink)`
+export const AdditionalInfoLink = styled(Link)`
   padding: 14px 32px;
   border-radius: 4px;
 
-  color: #ffd700;
+  color: inherit;
   font-weight: 500;
   font-size: 20px;
   text-decoration: none;
@@ -20,7 +20,6 @@ export const AdditionalInfoLink = styled(NavLink)`
   text-transform: uppercase;
 
   &.active {
-    color: white;
     background-color: #ffd700;
     box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
     border-radius: 100px;

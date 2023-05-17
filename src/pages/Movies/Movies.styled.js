@@ -6,6 +6,4 @@ export const MovieMain = styled.main`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  
-}
 `;

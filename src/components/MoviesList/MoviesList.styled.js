@@ -1,27 +1,33 @@
 import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const ListOfMovies = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 10px;
+  display: grid;
+  max-width: calc(100vw - 48px);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 16px;
 
-  > li {
-    flex-basis: calc((100% - 4 * 16px) / 5);
-    border-radius: 10px;
-    overflow: hidden;
-    &:hover {
-      filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.45));
-    }
-  }
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12px;
 `;
 
-export const Link = styled(NavLink)`
-  display: flex;
-  color: currentColor;
+export const Item = styled.li`
+  height: 100%;
+`;
+
+export const LinkStyled = styled(Link)`
   text-decoration: none;
-  flex-direction: column;
+  font-style: normal;
+  display: block;
+
+  font-size: 20px;
+
+  color: currentColor;
 `;
 
 export const ItemBox = styled.div`
@@ -32,30 +38,9 @@ export const ItemBox = styled.div`
   align-items: stretch;
   flex-direction: column;
 `;
-export const Rating = styled.div`
-  position: absolute;
-  top: -25px;
-  left: 5px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 1px 1px 20px #ffd700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: #fff;
-  background-color: #483d8b;
-`;
 
 export const TitleMovie = styled.h2`
   margin-top: 15px;
   font-size: 19px;
-  color: #dcdcdc;
-`;
-
-export const ReleaseMovie = styled.p`
-  font-size: 17px;
-  color: #dcdcdc;
-  opacity: 0.8;
+  text-align: center;
 `;

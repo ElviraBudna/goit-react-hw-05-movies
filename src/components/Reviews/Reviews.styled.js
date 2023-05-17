@@ -2,8 +2,14 @@ import styled from '@emotion/styled';
 
 export const ReviewsList = styled.ul`
   display: flex;
-  gap: 10px;
   flex-direction: column;
+  gap: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
 
   > li {
     padding: 15px;
@@ -23,11 +29,23 @@ export const ReviewsList = styled.ul`
         border-radius: 50%;
       }
     }
-    > p {
+    ${
+      '' /* > p {
       cursor: pointer;
       text-overflow: ellipsis;
+    } */
     }
   }
+`;
+
+export const Title = styled.h3`
+  margin-bottom: 8px;
+  font-size: 20px;
+`;
+
+export const Text = styled.p`
+  font-size: 20px;
+  cursor: pointer;
 `;
 
 export const ErrorMessege = styled.p`

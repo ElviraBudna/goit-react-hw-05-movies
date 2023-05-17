@@ -1,7 +1,17 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const SerchForm = styled.form`
-  width: 250px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  background-color: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto;
+  ${'' /* padding-bottom: 20px; */}
+  ${
+    '' /* width: 250px;
   margin-top: 20px;
   position: relative;
   border-radius: 100px;
@@ -12,10 +22,28 @@ export const SerchForm = styled.form`
   > input {
     border: none;
     outline: none;
+  } */
   }
 `;
 export const SerchButton = styled.button`
-  border: none;
+  display: inline-block;
+  width: 68px;
+  height: 30px;
+  border: 0;
+  border-radius: 4px;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    opacity: 1;
+  }
+  ${
+    '' /* border: none;
   position: absolute;
   right: 4px;
   cursor: pointer;
@@ -23,5 +51,24 @@ export const SerchButton = styled.button`
   opacity: 0.5;
   &:hover {
     opacity: 1;
+  } */
+  }
+`;
+
+export const Input = styled.input`
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  font: inherit;
+  font-size: 26px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  padding: 0 8px 4px 8px;
+  margin-right: 4px;
+
+  &::placeholder {
+    font: inherit;
+    font-size: 18px;
   }
 `;

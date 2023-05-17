@@ -5,14 +5,7 @@ body {
   font-family: Ysabeau;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #191970;
-  color: #fffafa;
-}
-
-header {
-  background: url(./images/bg-header.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
+  color: #212121;;
 }
 
 h1,
@@ -32,6 +25,9 @@ ul {
 }
 
 img {
-  display: block;
-  max-width: 100%;
+  
+      display: block;
+      max-width: 100%;
+      height: auto;
+    
 }

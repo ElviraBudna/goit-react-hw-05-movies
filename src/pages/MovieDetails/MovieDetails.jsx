@@ -23,11 +23,6 @@ const MoviesDetails = () => {
             : `https://thumbs.dreamstime.com/b/%D0%B8-%D1%8E%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BF-%D0%B0%D0%BA%D0%B0%D1%82%D0%B0-%D0%BA%D0%B8%D0%BD%D0%BE-48746594.jpg`,
           title: data.title,
           rating: data.vote_average.toFixed(1),
-          tagline: data.tagline,
-          date: data.release_date,
-          countries: data.production_countries
-            .map(({ name }) => name)
-            .join(', '),
           genres: data.genres.map(({ name }) => name).join(', '),
           overview: data.overview,
         };
@@ -48,9 +43,6 @@ const MoviesDetails = () => {
         <>
           <MovieInfo movie={movie} />
           <CastList>
-            <li>
-              <AdditionalInfoLink to="trailer">Trailer</AdditionalInfoLink>
-            </li>
             <li>
               <AdditionalInfoLink to="cast">Cast</AdditionalInfoLink>
             </li>
